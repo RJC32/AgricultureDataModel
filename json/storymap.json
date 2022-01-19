@@ -1,0 +1,138 @@
+{
+    "root": "n-Oq1vCg",
+    "nodes": {
+        "n-w2Q8LD": {
+            "type": "storycover",
+            "data": {
+                "type": "minimal",
+                "title": "Test",
+                "summary": "how cool is python",
+                "byline": "Ryan Cooper",
+                "titlePanelPosition": "start"
+                }
+            },
+        "n-NycJq7": {
+            "type": "navigation",
+            "data": {
+                "links": []
+            },
+            "config": {
+                "isHidden": true
+                }
+            },
+        "n-LoRsNy": {
+            "type": "webmap",
+            "data": {
+                "map": "r-5e3b3a6d1d6447958d89c308a33e45eb",
+                "caption": "U wanna go cuz?"}
+            },
+        "n-xF39hs": {
+            "type": "text",
+            "data": {
+                "text": "",
+                "type": "h4"
+                }
+            },
+        "n-FhUzPt": {
+            "type": "text",
+            "data": {
+                "text": "this is some text",
+                "type": "paragraph"
+                }
+            },
+        "n-ZWsd7Z": {
+            "type": "attribution",
+            "data": {
+                "content": "",
+                "attribution": ""
+                }
+            },
+        "n-rSKFB1": {
+            "type": "credits",
+            "children": ["n-xF39hs", "n-FhUzPt", "n-ZWsd7Z"]
+        },
+        "n-Oq1vCg": {
+            "type": "story",
+            "data": {
+                "storyTheme": "r-aNiReL"
+            },
+            "config": {
+                "coverDate": "first-published"
+            },
+            "children": ["n-w2Q8LD", "n-NycJq7", "n-LoRsNy", "n-rSKFB1"]
+            }
+        },
+        "resources": {"r-63a1f292464f49e3be994fe0d598986e": {
+            "type": "webmap",
+            "data": {
+                "extent": {
+                    "spatialReference": {
+                        "latestWkid": 3857,
+                        "wkid": 102100
+                    },
+                    "xmin": -71432.75969843859,
+                    "ymin": 6758526.311609101,
+                    "xmax": -68740.74310844911,
+                    "ymax": 6760040.72023204
+                 },
+                 "center": {
+                    "spatialReference": {
+                        "latestWkid": 3857,
+                        "wkid": 102100
+                    },
+                    "x": -70086.75140344385,
+                    "y": 6759283.51592057},
+                    "zoom": 16,
+                    "viewpoint": {
+                        "rotation": 0,
+                        "scale": 9027.977411,
+                        "targetGeometry": {
+                            "spatialReference": {
+                                "latestWkid": 3857,
+                                "wkid": 102100
+                            },
+                            "x": -70086.75140344385,
+                            "y": 6759283.51592057
+                        }
+                    },
+                    "mapLayers": [
+                        {
+                            "id": "3d4ef70fba394dcfa12fa2837c1e383e",
+                            "title": "Trees",
+                            "visible": true
+                        },
+                        {
+                            "id": "6cdf82d391aa4a98b10c56ad8c410abe",
+                            "title": "Ineligible Land",
+                            "visible": true
+                        },
+                        {
+                            "id": "397ec125fdcb45f990ddea12332bd95e",
+                            "title": "Crops",
+                            "visible": true
+                        },
+                        {
+                            "id": "a21c10f22cd14f9c8c3c6c7709b36df5",
+                            "title": "Land Use",
+                            "visible": true
+                        },
+                        {
+                            "id": "d04b958c923f47a89e866c6285d62699",
+                            "title": "Buildings",
+                            "visible": true
+                        }
+                    ],
+                    "itemId": "63a1f292464f49e3be994fe0d598986e",
+                    "itemType": "Web Map",
+                    "type": "default"
+                    }
+                },
+            "r-aNiReL": {
+                "type": "story-theme",
+                "data": {
+                    "themeId": "summit",
+                    "themeBaseVariableOverrides": {}
+                    }
+                }
+            }
+        }

@@ -1,0 +1,648 @@
+Service Name,Layer Name,Field Name,Codes,Type
+ 
+Administrative Information
+ 
+ ,Access Points
+ , ,Children,Activities
+ , ,Address,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Primary; Secondary,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Blocks
+ , ,Children,Activities
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Paddock; Transport Corridor; Waterway Corridor; Supplement Paddock; Forestry Stand; Residential,TEXT
+ , ,Subclass,-,TEXT
+ , ,Productive,Yes; No,TEXT
+ , ,Protected,Yes; No,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Site
+ , ,Children,Blocks; Access Points; Activities; Additional Details; Measurements; Staff
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Dairy; Dry Stock; Forestry; Horticulture,TEXT
+ , ,Subclass,Primary; Secondary,TEXT
+ , ,Capacity,-,SHORT
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Usage,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Holding
+ , ,Children,Site
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Owner,-,TEXT
+ , ,Titles,-,TEXT
+ , ,Notes,-,TEXT
+ 
+Structures
+ 
+ ,Production Structures
+ , ,Children,Activities; Additional Details; Hazards; Measurements
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Dairy Shed,TEXT
+ , ,Subclass,High Line Herringbone; External Rotary; Internal Rotary,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Usage,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Storage Structures
+ , ,Children,Activities; Hazards; Measurements
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Content,Milk; Chemical; Fertiliser; Fuel; Silage; Grain; Hay; Wood,TEXT
+ , ,Class,Vat; Silo; Tank; Pit; Shed,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Usage,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Service Structures
+ , ,Children,Activities; Hazards; Measurements
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Stock Yard; Loading Ramp; Utilities Shed,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Usage,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Management Structures
+ , ,Children,Activities; Hazards; Measurements
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Residential; Office,TEXT
+ , ,Subclass,-,TEXT
+ , ,Usage,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Waste Structures
+ , ,Children,Activities; Hazards; Measurements
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Rubbish Pit; Offal Pit; Recycling,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Usage,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+Operations
+ 
+ ,Operational Points
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Irrigation; Effluent; Fertiliser; Pest Control; Other,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Operational Lines
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Irrigation; Effluent; Fertiliser; Pest Control; Other,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Operational Areas
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Irrigation; Effluent; Fertiliser; Pest Control; Other,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+Transport
+ 
+ ,Transport Node
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Bridge; Cattlestop; Culvert; Gate; Road Crossing,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Transport Network
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Primary; Secondary,TEXT
+ , ,Subclass,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+Electric Utilities
+ 
+ ,Electric Device
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Energizer,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Electric Junction
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,-,TEXT
+ , ,Subclass,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Electric Structure
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Power Pole,TEXT
+ , ,Subclass,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Electric Network
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Electric Fence; Overhead Power Line; Underground Power Line,TEXT
+ , ,Subclass,-,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+Water Utilities
+ 
+ ,Water Device
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Irrigation System; Water Pump; Water Trough; Water Tank; Well,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Water Junction
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,-,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Water Structure
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,-,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Water Network
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Pipe,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+Effluent Utilities
+ 
+ ,Effluent Device
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Effluent Pond; Effluent Pump,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Effluent Junction
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,-,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Effluent Network
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Pipe,TEXT
+ , ,Subclass,-,TEXT
+ , ,Capacity,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Material,Concrete; Polyurethane; Wood; Metal,TEXT
+ , ,Notes,-,TEXT
+ 
+Topographic Features
+ 
+ ,Topographic Points
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Tree; Dam; Cliff,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Topographic Lines
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Hedge,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Topographic Areas
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Native Vegetation; Exotic Vegetation; Wetland; Gulley; Swale,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+Miscellaneous
+ 
+ ,Point of Interest
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,-,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Line of Interest
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,-,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Area of Interest
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,-,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+Water
+ 
+ ,Waterways
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Artificial; Ephemeral; Intermittent; Permanent,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Water Bodies
+ , ,Children,Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Artificial; Ephemeral; Intermittent; Permanent,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Catchment
+ , ,Children,Waterbodies; Waterways
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Notes,-,TEXT
+ 
+Land
+ 
+ ,Slope
+ , ,Children,
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Class,Flat to Gently Undulating; Undulating; Rolling; Strongly Rolling; Moderately Steep; Steep; Very Steep,TEXT
+ , ,Class Range,0â€“3Â°; 4â€“7Â°; 8â€“15Â°; 16â€“20Â°; 21â€“25Â°; 26â€“35Â°; >35Â°,TEXT
+ , ,Notes,-,TEXT
+ 
+Insights
+ 
+ ,Instruments
+ , ,Children,Measurements; Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Rain Gauge; River Flow Gauge; Soil Moisture Probe; Soil Nutrient Test; Weather Station,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Field Measurement
+ , ,Children,Measurements; Activities; Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Status,Current; Proposed; Temporary; Historic,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,Rain Gauge; River Flow Gauge; Soil Moisture Probe; Soil Nutrient Test; Weather Station,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+Activities
+ 
+ ,Point Activities
+ , ,Children,
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Type,Action; Routine,TEXT
+ , ,Description,-,TEXT
+ , ,Estimated Cost,-,DOUBLE
+ , ,Actual Cost,-,DOUBLE
+ , ,Responsibility Of,-,TEXT
+ , ,Action Date,-,DATE
+ , ,Stage,Suggested; Progressing; Completed,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Line Activities
+ , ,Children,
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Type,Action; Routine,TEXT
+ , ,Description,-,TEXT
+ , ,Estimated Cost,-,DOUBLE
+ , ,Actual Cost,-,DOUBLE
+ , ,Responsibility Of,-,TEXT
+ , ,Action Date,-,DATE
+ , ,Stage,Suggested; Progressing; Completed,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Polygon Activities
+ , ,Children,
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Type,Action; Routine,TEXT
+ , ,Description,-,TEXT
+ , ,Estimated Cost,-,DOUBLE
+ , ,Actual Cost,-,DOUBLE
+ , ,Responsibility Of,-,TEXT
+ , ,Action Date,-,DATE
+ , ,Stage,Suggested; Progressing; Completed,TEXT
+ , ,Notes,-,TEXT
+ 
+Health and Safety
+ 
+ ,Point Hazards
+ , ,Children,
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Notes,-,TEXT
+ 
+ ,Line Hazards
+ , ,Children,
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Notes,-,TEXT
+ 
+ ,Polygon Hazards
+ , ,Children,
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Notes,-,TEXT
+ 
+ ,Incidents
+ , ,Children,Injuries
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,-,TEXT
+ , ,Subclass,-,TEXT
+ , ,Notes,-,TEXT
+ 
+Common Tables
+ 
+ ,Activities
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Type,Action; Routine,TEXT
+ , ,Description,-,TEXT
+ , ,Estimated Cost,-,DOUBLE
+ , ,Actual Cost,-,DOUBLE
+ , ,Responsibility Of,-,TEXT
+ , ,Action Date,-,DATE
+ , ,Stage,Suggested; Progressing; Completed,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Hazards
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Notes,-,TEXT
+ 
+ ,Measurements
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Type,-,TEXT
+ , ,Measurement,-,DOUBLE
+ , ,Unit,units; millimetres; centimeters; meters; kilometers; kilograms; tonnes; litres; cubic metres,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Additional Details
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Start Date,-,DATE
+ , ,End Date,-,DATE
+ , ,Class,A2 Supplier; Vet; Chemical Company; Monitoring System; Cooling System; Plant Wast System; Internal Record,TEXT
+ , ,Subclass,Primary; Secondary,TEXT
+ , ,Link,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Staff
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Role,-,TEXT
+ , ,Contact Number,-,TEXT
+ , ,Notes,-,TEXT
+ 
+ ,Injuries
+ , ,Name,-,TEXT
+ , ,Alias,-,TEXT
+ , ,Unique Number,-,SHORT
+ , ,Injury Class,Strain/Sprain; Cut; Head Injury; Fracture/Break; Bruising; Burn; Poison/Chemical,TEXT
+ , ,Body Part,Face; Head; Back; Torso; Front Right Arm; Back Right Arm; Front Left Arm; Back Left Arm; Front Left Leg; Front Right Leg; Palm Right Hand; Palm Left Hand; Back Left Hand; Back Right Hand; Back Left Leg; Back Right Leg,TEXT
+ , ,Notes,-,TEXT
+ 

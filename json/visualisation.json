@@ -1,0 +1,834 @@
+{
+    "defaultPopup": {
+        "title": "{class}"
+    },
+    "services": [
+        {
+            "name": "administrative_information",
+            "tables": ["activities", "additional_information", "measurements", "period"],
+            "layers": [
+                {
+                    "name": "access_points",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSDiamond",
+                                        "size": 20,
+                                        "color": [240, 245, 230, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "Secondary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSDiamond",
+                                        "size": 10,
+                                        "color": [240, 245, 230, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "blocks",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSNull",
+                                "color": null,
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 250],
+                                    "width": 0.75
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "site",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSNull",
+                                "color": null,
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [240, 240, 240, 250],
+                                    "width": 4
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "holding",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSNull",
+                                "color": null,
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [32, 32, 32, 100],
+                                    "width": 6
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "structures",
+            "tables": ["activities", "additional_information", "hazards", "measurements", "period"],
+            "layers": [
+                {
+                    "name": "production_structures",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSSquare",
+                                "size": 20,
+                                "color": [188, 189, 220, 250],
+                                "outline": {
+                                    "color": [32, 32, 32, 250],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "storage_structures",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSSquare",
+                                "size": 15,
+                                "color": [254, 196, 79, 250],
+                                "outline": {
+                                    "color": [32, 32, 32, 250],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "service_structures",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSSquare",
+                                "size": 15,
+                                "color": [166, 189, 219, 250],
+                                "outline": {
+                                    "color": [32, 32, 32, 250],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "management_structures",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSSquare",
+                                "size": 15,
+                                "color": [255, 245, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "waste_structures",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSTriangle",
+                                "size": 15,
+                                "color": [252, 201, 14, 250],
+                                "outline": {
+                                    "color": [32, 32, 32, 250],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "operations",
+            "tables": ["activities", "hazards"],
+            "layers": [
+                {
+                    "name": "operational_points",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSX",
+                                "size": 15,
+                                "color": [245, 245, 235, 250],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "operational_lines",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSDash",
+                                "color": [245, 245, 235, 250],
+                                "width": 2
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "operational_areas",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSCross",
+                                "color": [245, 245, 235, 100],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSDash",
+                                    "color": [245, 245, 235, 250],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "transport",
+            "tables": ["activities", "hazards"],
+            "layers": [
+                {
+                    "name": "transport_node",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 15,
+                                "color": [32, 32, 32, 250],
+                                "outline": {
+                                    "color": [250, 250, 250, 250],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "transport_network",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [32, 32, 32, 250],
+                                "width": 2
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "electric_utilities",
+            "tables": ["activities", "hazards", "measurements"],
+            "layers": [
+                {
+                    "name": "electric_node",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "electric_network",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [32, 32, 32, 200],
+                                "width": 1
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "water_utilities",
+            "tables": ["activities", "hazards", "measurements"],
+            "layers": [
+                {
+                    "name": "water_node",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "water_network",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [32, 32, 32, 200],
+                                "width": 1
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "effluent_utilities",
+            "tables": ["activities", "hazards", "measurements"],
+            "layers": [
+                {
+                    "name": "effluent_node",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "effluent_network",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [32, 32, 32, 200],
+                                "width": 1
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "miscellaneous",
+            "tables": ["activities", "hazards"],
+            "layers": [
+                {
+                    "name": "point_of_interest",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "line_of_interest",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [32, 32, 32, 200],
+                                "width": 1
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "area_of_interest",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [32, 32, 32, 200],
+                                    "width": 0.5
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "water",
+            "tables": ["activities", "hazards"],
+            "layers": [
+                {
+                    "name": "waterways",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [46, 188, 252, 250],
+                                "width": 1
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "waterbodies",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 150],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [46, 188, 252, 250],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "catchment",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSNull",
+                                "color": null,
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSDot",
+                                    "color": [46, 188, 252, 150],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "land",
+            "tables": ["activities", "hazards"],
+            "layers": [
+                {
+                    "name": "slope",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [32, 32, 32, 200],
+                                    "width": 0.5
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "insights",
+            "tables": ["activities", "hazards", "measurements"],
+            "layers": [
+                {
+                    "name": "instruments",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "field_measurement",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "activities",
+            "tables": ["activities"],
+            "layers": [
+                {
+                    "name": "point_activities",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "line_activities",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [32, 32, 32, 200],
+                                "width": 1
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "polygon_activities",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [32, 32, 32, 200],
+                                    "width": 0.5
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "health_and_safety",
+            "tables": ["hazards"],
+            "layers": [
+                {
+                    "name": "point_hazards",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "line_hazards",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [32, 32, 32, 200],
+                                "width": 1
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "polygon_hazards",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [32, 32, 32, 200],
+                                    "width": 0.5
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "incidents",
+                    "drawingInfo": {
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 10,
+                                "color": [255, 255, 255, 200],
+                                "outline": {
+                                    "color": [32, 32, 32, 200],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "scaleSymbols": true,
+                        "transparency": 0,
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        }
+    ]
+}
