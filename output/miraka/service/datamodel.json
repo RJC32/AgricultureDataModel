@@ -1,0 +1,2331 @@
+{
+    "services": [
+        {
+            "name": "administration",
+            "alias": "Administration",
+            "tables": ["activities", "additional_details", "measurements", "staff", "logs"],
+            "layers": [
+                {
+                    "name": "access_points",
+                    "alias": "Access Points",
+                    "type": "POINT",
+                    "children": ["activities"],
+                    "fields": [
+                        {"name": "name", "alias": "Address", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "primary_secondary"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "label": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSDiamond",
+                                        "size": 14,
+                                        "color": [232, 232, 232, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 6,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": [
+                            {
+                                "labelExpression": null,
+                                "labelExpressionInfo": {
+                                    "expression": "$feature[\"name\"]",
+                                    "value": "{name}"
+                                },
+                                "useCodedValues": true,
+                                "maxScale": 0,
+                                "minScale": 0,
+                                "where": null,
+                                "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+                                "symbol": {
+                                    "color": [255, 255, 255, 255],
+                                    "type": "esriTS",
+                                    "backgroundColor": null,
+                                    "borderLineColor": null,
+                                    "haloSize": 1.5,
+                                    "haloColor": [32, 32, 32, 255],
+                                    "horizontalAlignment": "center",
+                                    "rightToLeft": false,
+                                    "angle": 0,
+                                    "xoffset": 0,
+                                    "yoffset": 0,
+                                    "text": "",
+                                    "rotated": false,
+                                    "kerning": true,
+                                    "font": {
+                                        "size": 12,
+                                        "style": "normal",
+                                        "decoration": "none",
+                                        "weight": "bold",
+                                        "family": "Arial"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+
+                },
+                {
+                    "name": "blocks",
+                    "alias": "Blocks",
+                    "type": "POLYGON",
+                    "children": ["activities"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "block_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "productive", "alias": "Productive", "type": "TEXT", "length": 255, "domain": "yes_no"},
+                        {"name": "protected", "alias": "Protected", "type": "TEXT", "length": 255, "domain": "yes_no"},
+                        {"name": "retired", "alias": "Retired", "type": "TEXT", "length": 255, "domain": "yes_no"},
+                        {"name": "riparian", "alias": "Riparian", "type": "TEXT", "length": 255, "domain": "yes_no"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Residential",
+                                    "label": "Residential",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSSolid",
+                                        "color": [250, 250, 250, 32],
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Blocks",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSNull",
+                                "color": null,
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+
+                },
+                {
+                    "name": "site",
+                    "alias": "Site",
+                    "type": "POLYGON",
+                    "children": ["blocks", "access_points", "activities", "additional_details", "measurements", "staff"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "site_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "primary_secondary"},
+                        {"name": "capacity", "alias": "Capacity", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "usage", "alias": "Usage", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSNull",
+                                "color": null,
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 4
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+
+                },
+                {
+                    "name": "holding",
+                    "alias": "Holding",
+                    "type": "POLYGON",
+                    "children": ["site"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "owner", "alias": "Owner", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "titles", "alias": "Titles", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "simple",
+                            "symbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSNull",
+                                "color": null,
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSNull",
+                                    "color": null
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "structures",
+            "alias": "Structures",
+            "tables": ["activities", "additional_details", "hazards", "measurements", "logs"],
+            "layers": [
+                {
+                    "name": "structures",
+                    "alias": "Structures",
+                    "type": "POINT",
+                    "children": ["activities","additional_details", "hazards", "measurements"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "content", "alias": "Content", "type": "TEXT", "length": 255, "domain": "content_type"},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "structure_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "structure_subclass"},
+                        {"name": "description", "alias": "Description", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "usage", "alias": "Usage", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "operations",
+            "alias": "Operations",
+            "tables": ["activities", "hazards", "logs"],
+            "layers": [
+                {
+                    "name": "operational_points",
+                    "alias": "Operational Points",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "operation_type"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "operational_lines",
+                    "alias": "Operational Lines",
+                    "type": "POLYLINE",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "operation_type"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "operational_areas",
+                    "alias": "Operational Areas",
+                    "type": "POLYGON",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "operation_type"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "transport",
+            "alias": "Transport",
+            "tables": ["activities", "hazards", "logs"],
+            "layers": [
+                {
+                    "name": "transport_node",
+                    "alias": "Transport Node",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "transport_node_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "transport_network",
+                    "alias": "Transport Network",
+                    "type": "POLYLINE",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "primary_secondary"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "electric_utilities",
+            "alias": "Electric Utilities",
+            "tables": ["activities", "hazards", "measurements", "logs"],
+            "layers": [
+                {
+                    "name": "electric_device",
+                    "alias": "Electric Device",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "electric_device_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "electric_junction",
+                    "alias": "Electric Junction",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "electric_junction_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "electric_structure",
+                    "alias": "Electric Structure",
+                    "type": "POINT",
+                    "children": ["activities", "hazards", "measurements"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "content", "alias": "Content", "type": "TEXT", "length": 255, "domain": "content_type"},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "electric_structure_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "electric_structure_subclass"},
+                        {"name": "description", "alias": "Description", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "usage", "alias": "Usage", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "electric_network",
+                    "alias": "Electric Network",
+                    "type": "POLYLINE",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "electric_network_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "water_utilities",
+            "alias": "Water Utilities",
+            "tables": ["activities", "hazards", "measurements", "logs"],
+            "layers": [
+                {
+                    "name": "water_device",
+                    "alias": "Water Device",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "water_device_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "water_junction",
+                    "alias": "Water Junction",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "water_junction_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "water_structure",
+                    "alias": "Water Structure",
+                    "type": "POINT",
+                    "children": ["activities", "hazards", "measurements"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "content", "alias": "Content", "type": "TEXT", "length": 255, "domain": "content_type"},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "water_structure_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "water_structure_subclass"},
+                        {"name": "description", "alias": "Description", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "usage", "alias": "Usage", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "water_network",
+                    "alias": "Water Network",
+                    "type": "POLYLINE",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "water_network_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "effluent_utilities",
+            "alias": "Effluent Utilities",
+            "tables": ["activities", "hazards", "measurements", "logs"],
+            "layers": [
+                {
+                    "name": "effluent_device",
+                    "alias": "Effluent Device",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "effluent_device_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "effluent_junction",
+                    "alias": "Effluent Junction",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "effluent_junction_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "effluent_structure",
+                    "alias": "Effluent Structure",
+                    "type": "POINT",
+                    "children": ["activities", "hazards", "measurements"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "content", "alias": "Content", "type": "TEXT", "length": 255, "domain": "content_type"},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "effluent_structure_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "effluent_structure_subclass"},
+                        {"name": "description", "alias": "Description", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "usage", "alias": "Usage", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "effluent_network",
+                    "alias": "Effluent Network",
+                    "type": "POLYLINE",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "water_network_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "capacity", "alias": "Capacity", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                        {"name": "material", "alias": "Material", "type": "TEXT", "length": 255, "domain": "material"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "topographic",
+            "alias": "Topographic",
+            "tables": ["activities", "hazards", "logs"],
+            "layers": [
+                {
+                    "name": "topographic_points",
+                    "alias": "Topographic Points",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "topographic_point_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "topographic_lines",
+                    "alias": "Topographic Lines",
+                    "type": "POLYLINE",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "topographic_line_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "topographic_areas",
+                    "alias": "Topographic Areas",
+                    "type": "POLYGON",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "topographic_area_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "slope",
+                    "alias": "Slope",
+                    "type": "POLYGON",
+                    "children": [],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "slope_class"},
+                        {"name": "class_range", "alias": "Class Range", "type": "TEXT", "length": 255, "domain": "slope_class_range"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "soil",
+                    "alias": "Soil",
+                    "type": "POLYGON",
+                    "children": [],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "soil_class"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "miscellaneous",
+            "alias": "Miscellaneous",
+            "tables": ["activities", "hazards", "logs"],
+            "layers": [
+                {
+                    "name": "point_of_interest",
+                    "alias": "Point of Interest",
+                    "type": "POINT",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "line_of_interest",
+                    "alias": "Line of Interest",
+                    "type": "POLYLINE",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "area_of_interest",
+                    "alias": "Area of Interest",
+                    "type": "POLYGON",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "water",
+            "alias": "Water",
+            "tables": ["activities", "hazards", "logs"],
+            "layers": [
+                {
+                    "name": "waterways",
+                    "alias": "Waterways",
+                    "type": "POLYLINE",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "water_class"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "waterbodies",
+                    "alias": "Water Bodies",
+                    "type": "POLYGON",
+                    "children": ["activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "water_class"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "catchment",
+                    "alias": "Catchment",
+                    "type": "POLYGON",
+                    "children": ["waterbodies", "waterways"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "insights",
+            "alias": "Insights",
+            "tables": ["activities", "hazards", "measurements", "logs"],
+            "layers": [
+                {
+                    "name": "instruments",
+                    "alias": "Instruments",
+                    "type": "POINT",
+                    "children": ["measurements", "activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "instrument_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "field_measurement",
+                    "alias": "Field Measurement",
+                    "type": "POINT",
+                    "children": ["measurements", "activities", "hazards"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "status", "alias": "Status", "type": "TEXT", "length": 255, "domain": "status"},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "instrument_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "activities",
+            "alias": "Activities",
+            "tables": ["activities", "logs"],
+            "layers": [
+                {
+                    "name": "point_activities",
+                    "alias": "Point Activities",
+                    "type": "POINT",
+                    "children": [],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "activity_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "activity_subclass"},
+                        {"name": "description", "alias": "Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "goal", "alias": "Goal", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "rate_of_return", "alias": "Rate of Return", "type": "TEXT", "length": 255, "domain": "rate_of_return"},
+                        {"name": "effectiveness_period", "alias": "Effectiveness Period", "type": "TEXT", "length": 255, "domain": "effectiveness"},
+                        {"name": "benefits", "alias": "Benefits", "type": "TEXT", "length": 1000, "domain": "null"},
+                        {"name": "priority", "alias": "Priority", "type": "TEXT", "length": 255, "domain": "priority"},
+                        {"name": "estimated_effort", "alias": "Estimated Effort", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "estimated_cost", "alias": "Estimated Cost", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "actual_cost", "alias": "Actual Cost", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "responsibility_of", "alias": "Responsibility Of", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "required_by", "alias": "Required By", "type": "DATE", "length": null, "domain": null},
+                        {"name": "phase", "alias": "Phase", "type": "TEXT", "length": 255, "domain": "phase"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_service_id", "alias": "Parent Service ID", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_layer_id", "alias": "Parent Layer ID", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "parent_feature_id", "alias": "Parent Feature ID", "type": "GUID", "length": null, "domain": null}
+                    ],
+                    "master": "activities",
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "line_activities",
+                    "alias": "Line Activities",
+                    "type": "POLYLINE",
+                    "children": [],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "activity_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "activity_subclass"},
+                        {"name": "description", "alias": "Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "goal", "alias": "Goal", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "rate_of_return", "alias": "Rate of Return", "type": "TEXT", "length": 255, "domain": "rate_of_return"},
+                        {"name": "effectiveness_period", "alias": "Effectiveness Period", "type": "TEXT", "length": 255, "domain": "effectiveness"},
+                        {"name": "benefits", "alias": "Benefits", "type": "TEXT", "length": 1000, "domain": "null"},
+                        {"name": "priority", "alias": "Priority", "type": "TEXT", "length": 255, "domain": "priority"},
+                        {"name": "estimated_effort", "alias": "Estimated Effort", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "estimated_cost", "alias": "Estimated Cost", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "actual_cost", "alias": "Actual Cost", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "responsibility_of", "alias": "Responsibility Of", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "required_by", "alias": "Required By", "type": "DATE", "length": null, "domain": null},
+                        {"name": "phase", "alias": "Phase", "type": "TEXT", "length": 255, "domain": "phase"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_service_id", "alias": "Parent Service ID", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_layer_id", "alias": "Parent Layer ID", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "parent_feature_id", "alias": "Parent Feature ID", "type": "GUID", "length": null, "domain": null}
+                    ],
+                    "master": "activities",
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "polygon_activities",
+                    "alias": "Polygon Activities",
+                    "type": "POINT",
+                    "children": [],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "activity_class"},
+                        {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "activity_subclass"},
+                        {"name": "description", "alias": "Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "goal", "alias": "Goal", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "rate_of_return", "alias": "Rate of Return", "type": "TEXT", "length": 255, "domain": "rate_of_return"},
+                        {"name": "effectiveness_period", "alias": "Effectiveness Period", "type": "TEXT", "length": 255, "domain": "effectiveness"},
+                        {"name": "benefits", "alias": "Benefits", "type": "TEXT", "length": 1000, "domain": "null"},
+                        {"name": "priority", "alias": "Priority", "type": "TEXT", "length": 255, "domain": "priority"},
+                        {"name": "estimated_effort", "alias": "Estimated Effort", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "estimated_cost", "alias": "Estimated Cost", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "actual_cost", "alias": "Actual Cost", "type": "DOUBLE", "length": null, "domain": null},
+                        {"name": "responsibility_of", "alias": "Responsibility Of", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "required_by", "alias": "Required By", "type": "DATE", "length": null, "domain": null},
+                        {"name": "phase", "alias": "Phase", "type": "TEXT", "length": 255, "domain": "phase"},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_service_id", "alias": "Parent Service ID", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_layer_id", "alias": "Parent Layer ID", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "parent_feature_id", "alias": "Parent Feature ID", "type": "GUID", "length": null, "domain": null}
+                    ],
+                    "master": "activities",
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "health_and_safety",
+            "alias": "Health and Safety",
+            "tables": ["hazards", "injuries", "logs"],
+            "layers": [
+                {
+                    "name": "incidents",
+                    "alias": "Incidents",
+                    "type": "POINT",
+                    "children": ["injuries"],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "incident_date", "alias": "Date of Incident", "type": "DATE", "length": null, "domain": null},
+                        {"name": "report_date", "alias": "Date of Report", "type": "DATE", "length": null, "domain": null},
+                        {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "incident_class"},
+                        {"name": "description", "alias": "Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "location", "alias": "Location", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "patient_name", "alias": "Patient Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "contact_number", "alias": "Contact Number", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "date_of_birth", "alias": "Date of Birth", "type": "DATE", "length": null, "domain": null},
+                        {"name": "pronouns", "alias": "Pronouns", "type": "TEXT", "length": null, "domain": "pronouns"},
+                        {"name": "address", "alias": "Address", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "job_title", "alias": "Job Title", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "employment_status", "alias": "Employment Status", "type": "TEXT", "length": 255, "domain": "employment_status"},
+                        {"name": "hours_at_work", "alias": "Hours at Work", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "prevention_details", "alias": "Prevention Details", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "vehicle_involvement", "alias": "Vehicle Involvement", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+                    ],
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "point_hazards",
+                    "alias": "Point Hazards",
+                    "type": "POINT",
+                    "children": [],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "period", "alias": "Period", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "exposure_description", "alias": "Exposure Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "exposure_consequence", "alias": "Exposure Consequence", "type": "TEXT", "length": 255, "domain": "exposure_consequence"},
+                        {"name": "exposure_likelihood", "alias": "Exposure Likelihood", "type": "TEXT", "length": 255, "domain": "exposure_likelihood"},
+                        {"name": "mitigation_class", "alias": "Mitigation Class", "type": "TEXT", "length": 255, "domain": "mitigation_class"},
+                        {"name": "mitigation_description", "alias": "Mitigation Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_service_id", "alias": "Parent Service ID", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_layer_id", "alias": "Parent Layer ID", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "parent_feature_id", "alias": "Parent Feature ID", "type": "GUID", "length": null, "domain": null}
+                    ],
+                    "master": "hazards",
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSMS",
+                                        "style": "esriSMSCircle",
+                                        "size": 20,
+                                        "color": [46, 188, 252, 255],
+                                        "outline": {
+                                            "color": [32, 32, 32, 255],
+                                            "width": 2
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSMS",
+                                "style": "esriSMSCircle",
+                                "size": 20,
+                                "color": [232, 232, 232, 255],
+                                "outline": {
+                                    "color": [32, 32, 32, 255],
+                                    "width": 2
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "line_hazards",
+                    "alias": "Line Hazards",
+                    "type": "POLYLINE",
+                    "children": [],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "period", "alias": "Period", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "exposure_description", "alias": "Exposure Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "exposure_consequence", "alias": "Exposure Consequence", "type": "TEXT", "length": 255, "domain": "exposure_consequence"},
+                        {"name": "exposure_likelihood", "alias": "Exposure Likelihood", "type": "TEXT", "length": 255, "domain": "exposure_likelihood"},
+                        {"name": "mitigation_class", "alias": "Mitigation Class", "type": "TEXT", "length": 255, "domain": "mitigation_class"},
+                        {"name": "mitigation_description", "alias": "Mitigation Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_service_id", "alias": "Parent Service ID", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_layer_id", "alias": "Parent Layer ID", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "parent_feature_id", "alias": "Parent Feature ID", "type": "GUID", "length": null, "domain": null}
+                    ],
+                    "master": "hazards",
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSLS",
+                                        "style": "esriSLSSolid",
+                                        "color": [46, 188, 252, 255],
+                                        "width": 1
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSLS",
+                                "style": "esriSLSSolid",
+                                "color": [250, 250, 250, 255],
+                                "width": 1
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                },
+                {
+                    "name": "polygon_hazards",
+                    "alias": "Polygon Hazards",
+                    "type": "POLYGON",
+                    "children": [],
+                    "fields": [
+                        {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                        {"name": "period", "alias": "Period", "type": "TEXT", "length": 255, "domain": null},
+                        {"name": "exposure_description", "alias": "Exposure Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "exposure_consequence", "alias": "Exposure Consequence", "type": "TEXT", "length": 255, "domain": "exposure_consequence"},
+                        {"name": "exposure_likelihood", "alias": "Exposure Likelihood", "type": "TEXT", "length": 255, "domain": "exposure_likelihood"},
+                        {"name": "mitigation_class", "alias": "Mitigation Class", "type": "TEXT", "length": 255, "domain": "mitigation_class"},
+                        {"name": "mitigation_description", "alias": "Mitigation Description", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_service_id", "alias": "Parent Service ID", "type": "TEXT", "length": 1000, "domain": null},
+                        {"name": "parent_layer_id", "alias": "Parent Layer ID", "type": "SHORT", "length": null, "domain": null},
+                        {"name": "parent_feature_id", "alias": "Parent Feature ID", "type": "GUID", "length": null, "domain": null}
+                    ],
+                    "master": "hazards",
+                    "drawingInfo": {
+                        "transparency": 0,
+                        "scaleSymbols": true,
+                        "renderer": {
+                            "type": "uniqueValue",
+                            "field1": "class",
+                            "uniqueValueInfos": [
+                                {
+                                    "value": "Primary",
+                                    "symbol": {
+                                        "type": "esriSFS",
+                                        "style": "esriSFSNull",
+                                        "color": null,
+                                        "outline": {
+                                            "type": "esriSLS",
+                                            "style": "esriSLSSolid",
+                                            "color": [250, 250, 250, 250],
+                                            "width": 1
+                                        }
+                                    }
+                                }
+                            ],
+                            "defaultLabel": "Default",
+                            "defaultSymbol": {
+                                "type": "esriSFS",
+                                "style": "esriSFSSolid",
+                                "color": [46, 188, 252, 255],
+                                "outline": {
+                                    "type": "esriSLS",
+                                    "style": "esriSLSSolid",
+                                    "color": [250, 250, 250, 255],
+                                    "width": 1
+                                }
+                            }
+                        },
+                        "labelingInfo": null
+                    }
+                }
+            ]
+        }
+    ]
+}

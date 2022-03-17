@@ -1,0 +1,100 @@
+{
+    "tables": [
+        {
+            "name": "activities",
+            "alias": "Activities",
+            "type": "TABLE",
+            "children": [],
+            "fields": [
+                {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "type", "alias": "Type", "type": "TEXT", "length": 255, "domain": "activity_type"},
+                {"name": "description", "alias": "Description", "type": "TEXT", "length": 1000, "domain": null},
+                {"name": "estimated_cost", "alias": "Estimated Cost", "type": "DOUBLE", "length": null, "domain": null},
+                {"name": "actual_cost", "alias": "Actual Cost", "type": "DOUBLE", "length": null, "domain": null},
+                {"name": "responsibility_of", "alias": "Responsibility Of", "type": "TEXT", "length": 255, "domain": "responsibility_of"},
+                {"name": "action_date", "alias": "Action Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "stage", "alias": "Stage", "type": "TEXT", "length": 255, "domain": "stage"},
+                {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+            ]
+        },
+        {
+            "name": "hazards",
+            "alias": "Hazards",
+            "type": "TABLE",
+            "children": [],
+            "fields": [
+                {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+            ]
+        },
+        {
+            "name": "measurements",
+            "alias": "Measurements",
+            "type": "TABLE",
+            "children": [],
+            "fields": [
+                {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "type", "alias": "Type", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "measurement", "alias": "Measurement", "type": "DOUBLE", "length": null, "domain": null},
+                {"name": "unit", "alias": "Unit", "type": "TEXT", "length": 255, "domain": "units"},
+                {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+            ]
+        },
+        {
+            "name": "additional_details",
+            "alias": "Additional Details",
+            "type": "TABLE",
+            "children": [],
+            "fields": [
+                {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                {"name": "start_date", "alias": "Start Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "end_date", "alias": "End Date", "type": "DATE", "length": null, "domain": null},
+                {"name": "class", "alias": "Class", "type": "TEXT", "length": 255, "domain": "detail_class"},
+                {"name": "subclass", "alias": "Subclass", "type": "TEXT", "length": 255, "domain": "primary_secondary"},
+                {"name": "link", "alias": "Link", "type": "TEXT", "length": 1000, "domain": null},
+                {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+            ]
+        },
+        {
+            "name": "staff",
+            "alias": "Staff",
+            "type": "TABLE",
+            "children": [],
+            "fields": [
+                {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                {"name": "role", "alias": "Role", "type": "TEXT", "length": 255, "domain": "role"},
+                {"name": "contact_number", "alias": "Contact Number", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+            ]
+        },
+        {
+            "name": "injuries",
+            "alias": "Injuries",
+            "type": "TABLE",
+            "children": [],
+            "fields": [
+                {"name": "name", "alias": "Name", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "alias", "alias": "Alias", "type": "TEXT", "length": 255, "domain": null},
+                {"name": "unique_number", "alias": "Unique Number", "type": "SHORT", "length": null, "domain": null},
+                {"name": "class", "alias": "Injury Class", "type": "TEXT", "length": 255, "domain": "injury_class"},
+                {"name": "body_part", "alias": "Body Part", "type": "TEXT", "length": 255, "domain": "body_part"},
+                {"name": "notes", "alias": "Notes", "type": "TEXT", "length": 1000, "domain": null}
+            ]
+        }
+    ]
+}

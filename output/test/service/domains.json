@@ -1,0 +1,480 @@
+{
+    "domains": [
+        {
+            "name": "yes_no",
+            "workspace": ["*"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Yes": "Yes",
+                "No": "No"
+            }
+        },
+        {
+            "name": "primary_secondary",
+            "workspace": ["*"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Primary": "Primary",
+                "Secondary": "Secondary"
+            }
+        },
+        {
+            "name": "units",
+            "workspace": ["*"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "units": "units",
+                "millimetre": "millimetres",
+                "centimeter": "centimeters",
+                "meters": "meters",
+                "kilometers": "kilometers",
+                "kilogram": "kilograms",
+                "tonne": "tonnes",
+                "litre": "litres",
+                "cubic metre": "cubic metres"
+            }
+        },
+        {
+            "name": "status",
+            "workspace": ["*"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Current": "Current",
+                "Proposed": "Proposed",
+                "Temporary": "Temporary",
+                "Historic": "Historic"
+            }
+        },
+        {
+            "name": "material",
+            "workspace": ["*"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Concrete": "Concrete",
+                "Polyurethane": "Polyurethane",
+                "Wood": "Wood",
+                "Metal": "Metal"
+            }
+        },
+        {
+            "name": "stage",
+            "workspace": ["*"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Suggested": "Suggested",
+                "Progressing": "Progressing",
+                "Completed": "Completed"
+            }
+        },
+        {
+            "name": "activity_type",
+            "workspace": ["*"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Action": "Action",
+                "Routine": "Routine"
+            }
+        },
+        {
+            "name": "phase",
+            "workspace": ["*"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Suggested": "Suggested",
+                "Progressing": "Progressing",
+                "Completed": "Completed"
+            }
+        },
+        {
+            "name": "site_class",
+            "workspace": ["administrative_information"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Dairy": "Dairy",
+                "Dry Stock": "Dry Stock",
+                "Forestry": "Forestry",
+                "Horticulture": "Horticulture"
+            }
+        },
+        {
+            "name": "block_class",
+            "workspace": ["administrative_information"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Paddock": "Paddock",
+                "Transport Corridor": "Transport Corridor",
+                "Waterway Corridor": "Waterway Corridor",
+                "Supplement Paddock": "Supplement Paddock",
+                "Forestry Stand": "Forestry Stand",
+                "Residential": "Residential"
+            }
+        },
+        {
+            "name": "detail_class",
+            "workspace": ["administrative_information"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "A2 Supplier": "A2 Supplier",
+                "Vet": "Vet",
+                "Chemical Company": "Chemical Company",
+                "Monitoring System": "Monitoring System",
+                "Cooling System": "Cooling System",
+                "Plant Wast System": "Plant Wast System",
+                "Internal Record": "Internal Record"
+            }
+        },
+        {
+            "name": "production_structure_class",
+            "workspace": ["structures"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Dairy Shed": "Dairy Shed"
+            }
+        },
+        {
+            "name": "production_structure_subclass",
+            "workspace": ["structures"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "High Line Herringbone": "High Line Herringbone",
+                "External Rotary": "External Rotary",
+                "Internal Rotary": "Internal Rotary"
+            }
+        },
+        {
+            "name": "content_type",
+            "workspace": ["structures"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Milk": "Milk",
+                "Chemical": "Chemical",
+                "Fertiliser": "Fertiliser",
+                "Fuel": "Fuel",
+                "Silage": "Silage",
+                "Grain": "Grain",
+                "Hay": "Hay",
+                "Wood": "Wood"
+            }
+        },
+        {
+            "name": "storage_structure_class",
+            "workspace": ["structures"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Vat": "Vat",
+                "Silo": "Silo",
+                "Tank": "Tank",
+                "Pit": "Pit",
+                "Shed": "Shed"
+            }
+        },
+        {
+            "name": "service_structure_class",
+            "workspace": ["structures"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Stock Yard": "Stock Yard",
+                "Loading Ramp": "Loading Ramp",
+                "Utilities Shed": "Utilities Shed"
+            }
+        },
+        {
+            "name": "management_structure_class",
+            "workspace": ["structures"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Residential": "Residential",
+                "Office": "Office"
+            }
+        },
+        {
+            "name": "waste_structure_class",
+            "workspace": ["structures"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Rubbish Pit": "Rubbish Pit",
+                "Offal Pit": "Offal Pit",
+                "Recycling": "Recycling"
+            }
+        },
+        {
+            "name": "operation_type",
+            "workspace": ["operations"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Irrigation": "Irrigation",
+                "Effluent": "Effluent",
+                "Fertiliser": "Fertiliser",
+                "Pest Control": "Pest Control",
+                "Other": "Other"
+            }
+        },
+        {
+            "name": "transport_node_class",
+            "workspace": ["transport"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Bridge": "Bridge",
+                "Cattlestop": "Cattlestop",
+                "Culvert": "Culvert",
+                "Gate": "Gate",
+                "Road Crossing": "Road Crossing"
+            }
+        },
+        {
+            "name": "electric_device_class",
+            "workspace": ["electric_utilities"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Energizer": "Energizer"
+            }
+        },
+        {
+            "name": "electric_structure_class",
+            "workspace": ["electric_utilities"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Power Pole": "Power Pole"
+            }
+        },
+        {
+            "name": "electric_network_class",
+            "workspace": ["electric_utilities"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Electric Fence": "Electric Fence",
+                "Overhead Power Line": "Overhead Power Line",
+                "Underground Power Line": "Underground Power Line"
+
+            }
+        },
+        {
+            "name": "water_device_class",
+            "workspace": ["water_utilities"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Irrigation System": "Irrigation System",
+                "Water Pump": "Water Pump",
+                "Water Trough": "Water Trough",
+                "Water Tank": "Water Tank",
+                "Well": "Well"
+            }
+        },
+        {
+            "name": "water_network_class",
+            "workspace": ["water_utilities"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Pipe": "Pipe"
+            }
+        },
+        {
+            "name": "effluent_device_class",
+            "workspace": ["effluent_utilities"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Effluent Pond": "Effluent Pond",
+                "Effluent System": "Effluent System",
+                "Effluent System": "Effluent Pump"
+            }
+        },
+        {
+            "name": "effluent_network_class",
+            "workspace": ["effluent_utilities"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Pipe": "Pipe"
+            }
+        },
+        {
+            "name": "topographic_point_class",
+            "workspace": ["topographic_features"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Tree": "Tree",
+                "Dam": "Dam",
+                "Cliff": "Cliff"
+            }
+        },
+        {
+            "name": "topographic_line_class",
+            "workspace": ["topographic_features"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Hedge": "Hedge"
+            }
+        },
+        {
+            "name": "topographic_area_class",
+            "workspace": ["topographic_features"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Native Vegetation": "Native Vegetation",
+                "Exotic Vegetation": "Exotic Vegetation",
+                "Wetland": "Wetland",
+                "Gulley": "Gulley",
+                "Swale": "Swale"
+            }
+        },
+        {
+            "name": "water_class",
+            "workspace": ["water"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Artificial": "Artificial",
+                "Ephemeral": "Ephemeral",
+                "Intermittent": "Intermittent",
+                "Permanent": "Permanent"
+            }
+        },
+        {
+            "name": "slope_class",
+            "workspace": ["land"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Flat to Gently Undulating": "Flat to Gently Undulating",
+                "Undulating": "Undulating",
+                "Rolling": "Rolling",
+                "Strongly Rolling": "Strongly Rolling",
+                "Moderately Steep": "Moderately Steep",
+                "Steep": "Steep",
+                "Very Steep": "Very Steep"
+            }
+        },
+        {
+            "name": "slope_class_range",
+            "workspace": ["land"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "0–3°": "0–3°",
+                "4–7°": "4–7°",
+                "8–15°": "8–15°",
+                "16–20°": "16–20°",
+                "21–25°": "21–25°",
+                "26–35°": "26–35°",
+                ">35°": ">35°"
+            }
+        },
+        {
+            "name": "instrument_class",
+            "workspace": ["instruments"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Rain Gauge": "Rain Gauge",
+                "River Flow Gauge": "River Flow Gauge",
+                "Soil Moisture Probe": "Soil Moisture Probe",
+                "Soil Nutrient Test": "Soil Nutrient Test",
+                "Weather Station": "Weather Station"
+            }
+        },
+        {
+            "name": "injury_class",
+            "workspace": ["health_and_safety"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Strain/Sprain": "Strain/Sprain",
+                "Cut": "Cut",
+                "Head Injury": "Head Injury",
+                "Fracture/Break": "Fracture/Break",
+                "Bruising": "Bruising",
+                "Burn": "Burn",
+                "Poison/Chemical": "Poison/Chemical"
+            }
+        },
+        {
+            "name": "body_part",
+            "workspace": ["health_and_safety"],
+            "description": null,
+            "field_type": "TEXT",
+            "domain_type": "CODED",
+            "codes": {
+                "Face": "Face",
+                "Head": "Head",
+                "Back": "Back",
+                "Torso": "Torso",
+                "Front Right Arm": "Front Right Arm",
+                "Back Right Arm": "Back Right Arm",
+                "Front Left Arm": "Front Left Arm",
+                "Back Left Arm": "Back Left Arm",
+                "Front Left Leg": "Front Left Leg",
+                "Front Right Leg": "Front Right Leg",
+                "Palm Right Hand": "Palm Right Hand",
+                "Palm Left Hand": "Palm Left Hand",
+                "Back Left Hand": "Back Left Hand",
+                "Back Right Hand": "Back Right Hand",
+                "Back Left Leg": "Back Left Leg",
+                "Back Right Leg": "Back Right Leg"
+            }
+        }
+    ]
+}
